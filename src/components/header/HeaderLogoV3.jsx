@@ -9,11 +9,7 @@ const HeaderLogoV3 = ({ logoColor = false, openMenu }) => {
                     <i className="fa-solid fa-bars"></i>
                 </button>
                 <Link className="navbar-brand" to="/#">
-                    {logoColor ?
-                        <><img src="/img/logo/logo.png" className="logo" alt="Logo" /></>
-                        :
-                        <><img src="/img/logo/logo-light.png" className="logo" alt="Logo" /></>
-                    }
+                    <img src="/img/logo/logo.png" className="logo" alt="Logo" />
                 </Link>
             </div>
         </>

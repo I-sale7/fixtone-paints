@@ -21,6 +21,7 @@ import { ToastContainer } from 'react-toastify';
 import { Helmet } from 'react-helmet';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import './I18n';
 
 function App() {
 

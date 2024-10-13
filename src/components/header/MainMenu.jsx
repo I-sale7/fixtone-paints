@@ -23,78 +23,13 @@ const MainMenu = ({ isOpen, closeMenu, toggleSubMenu, toggleMegaMenu }) => {
                         </ul> */}
                     </li>
                     <li className="dropdown megamenu-fw">
-                        <Link to={void (0)} className="dropdown-toggle" onClick={toggleSubMenu}>MegaMenu</Link>
-                        <ul className="dropdown-menu megamenu-content">
-                            <li>
-                                <div className="row">
-                                    <div className="col-menu col-lg-3">
-                                        <h6 className="title" onClick={toggleMegaMenu}>Services</h6>
-                                        <div className="content" >
-                                            <ul className="menu-col ">
-                                                <li><Link to="/services#">Services Style One</Link></li>
-                                                <li><Link to="/services-2#">Services Style Two</Link></li>
-                                                <li><Link to="/services-3#">Services Style Three</Link></li>
-                                                <li><Link to="/services-details#">Services Single</Link></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div className="col-menu col-lg-3">
-                                        <h6 className="title" onClick={toggleMegaMenu}>Projects</h6>
-                                        <div className="content">
-                                            <ul className="menu-col">
-                                                <li><Link to="/project-2-column#">Project Two Column</Link></li>
-                                                <li><Link to="/project-3-column#">Project Three Colum</Link></li>
-                                                <li><Link to="/project-carousel#">Project Carousel</Link></li>
-                                                <li><Link to="/project-details#">Project Details</Link></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div className="col-menu col-lg-3">
-                                        <h6 className="title" onClick={toggleMegaMenu}>Team</h6>
-                                        <div className="content">
-                                            <ul className="menu-col">
-                                                <li><Link to="/team#">Team Style One</Link></li>
-                                                <li><Link to="/team-2#">Team Style Two</Link></li>
-                                                <li><Link to="/team-3#">Team Style Three</Link></li>
-                                                <li><Link to="/team-details/1#">Team Details</Link></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div className="col-menu col-lg-3">
-                                        <h6 className="title" onClick={toggleMegaMenu}>Other Pages</h6>
-                                        <div className="content">
-                                            <ul className="menu-col">
-                                                <li><Link to="/about-us#">About Us</Link></li>
-                                                <li><Link to="/pricing#">Pricing Table</Link></li>
-                                                <li><Link to="/contact-us#">Contact us</Link></li>
-                                                <li><Link to="/404#">Error page</Link></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                        <Link to={void (0)} className="" onClick={toggleSubMenu}>MegaMenu</Link>
                     </li>
                     <li className="dropdown">
-                        <Link to={void (0)} className="dropdown-toggle" onClick={toggleSubMenu}>Services</Link>
-                        <ul className="dropdown-menu">
-                            <li><Link to="/services-details#">Marketing Strategy</Link></li>
-                            <li><Link to="/services-details#">Enterprise Consulting</Link></li>
-                            <li><Link to="/services-details#">Growth Tracking</Link></li>
-                            <li><Link to="/services-details#">Social Media Marketing</Link></li>
-                            <li><Link to="/services-details#">Keyword Research</Link></li>
-                        </ul>
+                        <Link to={void (0)} className="" onClick={toggleSubMenu}>Services</Link>
                     </li>
                     <li className="dropdown">
-                        <Link to={void (0)} className="dropdown-toggle" onClick={toggleSubMenu}>Blog</Link>
-                        <ul className="dropdown-menu">
-                            <li><Link to="/blog-standard#">Blog Standard</Link></li>
-                            <li><Link to="/blog-with-sidebar#">Blog With Sidebar</Link></li>
-                            <li><Link to="/blog-2-column#">Blog Grid Two Column</Link></li>
-                            <li><Link to="/blog-3-column#">Blog Grid Three Column</Link></li>
-                            <li><Link to="/blog-single#">Blog Single</Link></li>
-                            <li><Link to="/blog-single-sidebar#">Blog Single With Sidebar</Link></li>
-                        </ul>
+                        <Link to={void (0)} className="" onClick={toggleSubMenu}>Blog</Link>
                     </li>
                     <li><Link to="/contact-us#">contact</Link></li>
                 </ul>

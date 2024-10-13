@@ -5851,12 +5851,16 @@ a.icon-btn {
 
 .services-style-three {
 	background: var(--white);
-	padding: 60px 37px;
+	/* padding: 60px 37px; */
 	border-radius: 8px;
 	box-shadow: 0 5px 3px rgb(3 27 78 / 8%);
 	overflow: hidden;
 	position: relative;
 	z-index: 1;
+	max-height: 400px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 
