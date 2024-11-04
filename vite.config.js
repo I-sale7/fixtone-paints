@@ -9,6 +9,7 @@ export default defineConfig({
     devSourcemap: true
   },
   build: {
+    outDir: 'build', // Ensure output directory is 'build'
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
