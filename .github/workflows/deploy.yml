@@ -24,9 +24,12 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: List build directory
+        run: ls -la ./build  # Change to ./dist if needed
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build  # Adjust this to the path of your built files
-          publish_branch: gh-pages 
+          publish_dir: ./build  # Change to ./dist if your build outputs there
+          publish_branch: gh-pages
