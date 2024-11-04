@@ -19,6 +19,7 @@ jobs:
           node-version: '18'  # Adjust based on your project requirements
 
       - name: Install dependencies
+        # npm install dependancies with Legacy-peer-deps
         run: npm install --legacy-peer-deps
 
       - name: Build project
