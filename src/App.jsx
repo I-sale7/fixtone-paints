@@ -21,12 +21,12 @@ import { ToastContainer } from 'react-toastify';
 import { Helmet } from 'react-helmet';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import './I18n';
+import { LocaleProvider } from './components/services/LocaleContext';
 
 function App() {
 
   //  Preloader 
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
@@ -37,15 +37,17 @@ function App() {
   return (
     <>
       {isLoading ? <Preloader /> :
-        <div>
-          <Helmet>
-            <title>Dilabs Creative Digital Agency React Template</title>
-            <link rel="shortcut icon" href="/img/others/favicon.ico"></link>
-          </Helmet>
-          <Routers />
-          <ScrollUpBtn />
-          <ToastContainer />
-        </div>
+        <LocaleProvider>
+          <div>
+            <Helmet>
+              <title>Dilabs Creative Digital Agency React Template</title>
+              <link rel="shortcut icon" href="/img/others/favicon.ico"></link>
+            </Helmet>
+            <Routers />
+            <ScrollUpBtn />
+            <ToastContainer />
+          </div>
+        </LocaleProvider>
       }
     </>
   )

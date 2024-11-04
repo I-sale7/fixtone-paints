@@ -65,23 +65,6 @@ const HeaderV5 = () => {
                     <div className="container d-flex justify-content-between align-items-center">
                         <HeaderLogoV1 openMenu={openMenu} />
                         <MainMenu isOpen={isOpen} closeMenu={closeMenu} toggleSubMenu={toggleSubMenu} toggleMegaMenu={toggleMegaMenu} />
-                        <div className="attr-right">
-                            <div className="attr-nav flex">
-                                <ul>
-                                    <li className="contact">
-                                        <div className="call">
-                                            <div className="icon">
-                                                <i className="fa-solid fa-comments-dollar"></i>
-                                            </div>
-                                            <div className="info">
-                                                <p>Have any Questions?</p>
-                                                <h5><a href="mailto:info@crysta.com">info@atozen.com</a></h5>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
                     <div className={`overlay-screen ${isOpen ? "opened" : ""}`}></div>
                 </nav>

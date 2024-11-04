@@ -1,7 +1,10 @@
 import React from 'react';
 import { HashLink as Link } from 'react-router-hash-link'
+import LanguageSwitcher from '../services/LanguageSwitcher';
+import { useTranslation } from 'react-i18next';
 
 const MainMenu = ({ isOpen, closeMenu, toggleSubMenu, toggleMegaMenu }) => {
+    const {t} = useTranslation();
     return (
         <>
             <div className={`collapse navbar-collapse collapse-mobile ${isOpen ? "show" : ""}`} id="navbar-menu">
@@ -11,28 +14,31 @@ const MainMenu = ({ isOpen, closeMenu, toggleSubMenu, toggleMegaMenu }) => {
                 </button>
                 <ul className="nav navbar-nav navbar-center">
                     <li className="dropdown">
-                        <Link to="/" className="active" onClick={toggleSubMenu}>Home</Link>
-                        {/* <ul className="dropdown-menu">
-                            <li><Link to="/">Consulting Business</Link></li>
-                            <li className="dropdown">
-                                <Link to={void (0)} className="dropdown-toggle" onClick={toggleSubMenu}>Home Dark Version</Link>
-                                <ul className="dropdown-menu">
-                                    <li><Link to="/business-dark#">Consulting Business</Link></li>
-                                </ul>
-                            </li>
-                        </ul> */}
+                        <Link to={"/"}>
+                            {t('Home')}
+                        </Link>
                     </li>
                     <li className="dropdown megamenu-fw">
-                        <Link to={void (0)} className="" onClick={toggleSubMenu}>MegaMenu</Link>
+                        <Link to={"/about-us"} className="">
+                            {t('About')}
+                        </Link>
                     </li>
                     <li className="dropdown">
-                        <Link to={void (0)} className="" onClick={toggleSubMenu}>Services</Link>
+                        <Link to={"/our-products"} className="">
+                            {t('Products')}
+                        </Link>
                     </li>
-                    <li className="dropdown">
-                        <Link to={void (0)} className="" onClick={toggleSubMenu}>Blog</Link>
+                    <li>
+                        <Link to="/contact-us">
+                            {t('Contact')}
+                        </Link>
                     </li>
-                    <li><Link to="/contact-us#">contact</Link></li>
+                    <li>
+                        <LanguageSwitcher />
+                    </li>
                 </ul>
+                {/* <div className='language-switcher'> */}
+                {/* </div> */}
             </div>
         </>
     );

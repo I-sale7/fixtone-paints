@@ -1,20 +1,58 @@
-export const productsQuery = `{
-  productsCollection(order: id_DESC){
+export const productsQuery = (locale = "en-US") => `{
+  productsCollection(order: id_DESC, locale: "${locale}"){
     items{
+      sys{
+        id
+      }
       name
-      id
-      headDescription{
+      description{
         json
       }
-      bottomDescription{
-        json
-      }
-      imagesCollection{
-        items{
-          url
-        }
+      mainImage{
+        url
       }
     }
     total
+  }
+}`;
+
+export const homeProductsQuery = (locale = "en-US") => `{
+  productsCollection(order: id_DESC, locale: "${locale}"){
+    items{
+      sys{
+        id
+      }
+      name
+      id
+      mainImage{
+        url
+      }
+    }
+  }
+}`
+
+export const singleProductQuery = (id, locale = "en-US")=> `{
+  products(id: "${id}", locale: "${locale}"){
+    name
+    description{
+      json
+      links {
+        assets {
+          block {
+            sys {
+              id
+            }
+            url
+            title
+          }
+        }
+      }
+    }
+    mainImage{
+      url
+    }
+    banner{
+      url
+    }
   }
 }`;

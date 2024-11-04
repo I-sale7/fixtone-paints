@@ -2,18 +2,21 @@ import React from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
 
 const SingleServiceV3 = ({ service }) => {
-    const { id, imagesCollection, name } = service;
+    const { sys, mainImage, name, btnLink } = service;
 
-    console.log('service', service)
 
     return (
         <>
-            <div className="services-style-three">
-                {/* <i className={serviceIcon}></i>
-                <h4><Link to={`/${btnLink}/${id}#`}>{serviceTitle}</Link></h4>
-                <p>{serviceText}</p> */}
-                <img src={imagesCollection.items[0].url} alt={name} />
-                {/* <Link to={`/${btnLink}/${id}#`} className="btn-service">{btnText}<i className={btnIcon}></i></Link> */}
+            <div className="services-style-three product-box">
+                <img src={mainImage.url} alt={name} />
+                <h4 className='product__title'>
+                    <Link className='d-flex flex-column gap-3' to={`/${btnLink}/${sys.id}`}>
+                        {name}
+                        <i className='fa-solid btn-service fa-arrow-right'></i>
+                    </Link>
+                </h4>
+                <div className='product__link'>
+                </div>
             </div>
         </>
     );

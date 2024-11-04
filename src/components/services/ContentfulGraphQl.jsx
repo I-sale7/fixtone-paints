@@ -1,7 +1,10 @@
 import React, { useState, useEffect} from 'react'
+import { useLocale } from './LocaleContext';
 
 const ContentfulGraphQl = (query) => {
   const [page, setPage] = useState(null);
+
+  const {locale} = useLocale();
 
   useEffect(() => {
     window
@@ -26,7 +29,7 @@ const ContentfulGraphQl = (query) => {
         // rerender the entire component with new data
         setPage(data);
       });
-  }, []);
+  }, [locale]);
 
   return page;
 }

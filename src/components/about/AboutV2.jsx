@@ -1,7 +1,19 @@
 import React from 'react';
 import { HashLink as Link } from 'react-router-hash-link'
+import ContentfulGraphQl from '../services/ContentfulGraphQl';
+import { aboutUsQuery } from '../../gqlSchemas/about';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { useLocale } from '../services/LocaleContext';
 
 const AboutV2 = () => {
+
+    const {locale} = useLocale();
+
+    let data = ContentfulGraphQl(aboutUsQuery(locale));
+
+    let aboutData = data?.aboutPage;
+    if(!data || !aboutData) return;
+
     return (
         <>
             <div className="about-style-two-area default-padding">
@@ -9,7 +21,7 @@ const AboutV2 = () => {
                     <div className="row">
                         <div className="col-lg-6 about-style-two">
                             <div className="about-two-thumb">
-                                <img src="/img/thumb/4.jpg" alt="Image Not Found" />
+                                <img src={aboutData.topMedia.url} alt="Image Not Found" />
                                 <div className="experience">
                                     <h2><strong>18</strong> Years Experience</h2>
                                 </div>
@@ -17,27 +29,10 @@ const AboutV2 = () => {
                         </div>
                         <div className="col-lg-6 about-style-two pl-50 pl-md-15 pl-xs-15 mt-60 mt-xs-40">
                             <div className="about-two-info">
-                                <h4 className="sub-title">About our compnay</h4>
-                                <h2 className="title">Providing the best service <br /> In digital marketing</h2>
-                                <p>
-                                    Contrasted dissimilar get joy you instrument out reasonably. Again keeps at no meant stuff. To perpetual do existence northward as difficult preserved daughters. Continued at up to zealously necessary breakfa-solidt. Surrounded sir motionless she end literature. Gay direction neglected but supported yet her.
-                                </p>
-                                <div className="about-grid-info">
-                                    <Link className="btn-round-animation" to="/services#">Discover More <i className="fa-solid fa-arrow-right"></i></Link>
-                                    <ul className="list-info-item">
-                                        <li>
-                                            <h4><Link to="#">Design <i className="fa-solid fa-angle-right"></i></Link></h4>
-                                        </li>
-                                        <li>
-                                            <h4><Link to="#">Digital Solution <i className="fa-solid fa-angle-right"></i></Link></h4>
-                                        </li>
-                                        <li>
-                                            <h4><Link to="#">Strategy <i className="fa-solid fa-angle-right"></i></Link></h4>
-                                        </li>
-                                        <li>
-                                            <h4><Link to="#">Branding <i className="fa-solid fa-angle-right"></i></Link></h4>
-                                        </li>
-                                    </ul>
+                                <h4 className="sub-title">{aboutData.title}</h4>
+                                {aboutData.subtitle ? <h2 className="title">{aboutData.subtitle}</h2> : ''}
+                                <div className='description'>
+                                    {documentToReactComponents(aboutData.description.json)}
                                 </div>
                             </div>
                         </div>

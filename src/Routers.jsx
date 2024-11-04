@@ -1,12 +1,6 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import Home1 from './pages/homePages/Home1';
-import Home2 from './pages/homePages/Home2';
-import Home3 from './pages/homePages/Home3';
 import Business from './pages/homePages/Business';
-import Home1Dark from './pages/homePages/Home1Dark';
-import Home2Dark from './pages/homePages/Home2Dark';
-import Home3Dark from './pages/homePages/Home3Dark';
 import BusinessDark from './pages/homePages/BusinessDark';
 import Services from './pages/servicePages/Services';
 import Services2 from './pages/servicePages/Services2';
@@ -29,19 +23,21 @@ import BlogWithSideBar from './pages/blogPages/BlogWithSideBar';
 import Blog2Column from './pages/blogPages/Blog2Column';
 import Blog3Column from './pages/blogPages/Blog3Column';
 import BlogSingle from './pages/blogPages/BlogSingle';
-import BlogSingleSidebar from './pages/blogPages/BlogSingleSidebar';
+import { useLocale } from './components/services/LocaleContext';
 
 const Routers = () => {
 
-    const checkUrlLanguage = () => {
-        const pathName = window.location.pathname
-        return pathName.indexOf('/en') === 0 || pathName.indexOf('/ar') === 0 ? '/:lang/' : '/';
-    }
+    const {locale} = useLocale();
+
+  useEffect(()=> {
+    document.documentElement.setAttribute('lang', locale === 'ar' ? 'ar' : 'en');
+    document.documentElement.setAttribute('dir', locale === 'ar' ? 'rtl' : 'ltr');
+  }, [locale])
 
     return (
         <>
             <Routes>
-                <Route path={checkUrlLanguage()}>
+                <Route path='/'>
                     <Route path='' element={<Business />}></Route>
                     <Route path='business-dark' element={<BusinessDark />}></Route>
                     <Route path='services' element={<Services />}></Route>
@@ -65,11 +61,9 @@ const Routers = () => {
                     <Route path='blog-standard' element={<BlogStandard />}></Route>
                     <Route path='blog-with-sidebar' element={<BlogWithSideBar />}></Route>
                     <Route path='blog-2-column' element={<Blog2Column />}></Route>
-                    <Route path='blog-3-column' element={<Blog3Column />}></Route>
+                    <Route path='our-products' element={<Blog3Column />}></Route>
                     <Route path='blog-single/:id' element={<BlogSingle />}></Route>
                     <Route path='blog-single' element={<Navigate to='blog-single/1' />}></Route>
-                    <Route path='blog-single-sidebar/:id' element={<BlogSingleSidebar />}></Route>
-                    <Route path='blog-single-sidebar/' element={<Navigate to='/blog-single-sidebar/1' />}></Route>
                     <Route path='*' element={<Error404 />}></Route>
                 </Route>
             </Routes>

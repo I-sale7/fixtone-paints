@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Keyboard, Pagination } from 'swiper/modules';
 import ContentfulGraphQl from '../services/ContentfulGraphQl';
 import { heroBannerCollection } from '../../gqlSchemas/banner';
+import { useLocale } from '../services/LocaleContext';
 
 const BannerV4 = () => {
 
@@ -17,8 +18,8 @@ const BannerV4 = () => {
     const handlePrev = () => {
         SlideRef.current.swiper.slidePrev()
     }
-
-    const heroBanners = ContentfulGraphQl(heroBannerCollection);
+    const {locale} = useLocale();
+    const heroBanners = ContentfulGraphQl(heroBannerCollection(locale));
 
     if(heroBanners?.heroBannerCollection?.items) {
         const banners = heroBanners?.heroBannerCollection?.items;

@@ -1,30 +1,31 @@
 import React from 'react';
 import { HashLink as Link } from 'react-router-hash-link'
 import SocialShare from '../others/SocialShare';
-import { toast } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
+import ContentfulGraphQl from '../services/ContentfulGraphQl';
+import { contactQuery } from '../../gqlSchemas/contact';
+import { useLocale } from '../services/LocaleContext';
 
 const FooterV1 = () => {
 
-    const handleSearch = (event) => {
-        event.preventDefault()
-        event.target.reset()
-        toast.success("Thanks for your Email")
-    }
+    const {t} = useTranslation();
+    const {locale} = useLocale();
+    const response = ContentfulGraphQl(contactQuery(locale));
+    
+    if(!response) return;
+    const data = response?.contactCollection?.items;
 
     return (
         <>
             <footer className="bg-dark text-light" style={{ backgroundImage: "url(/img/shape/5.png)" }}>
-                <div className="container">
+                <div className="container-full">
                     <div className="f-items default-padding-bottom pt-70 pt-xs-0">
                         <div className="row">
                             <div className="col-lg-3 col-md-6 footer-item mt-50">
-                                <div className="footer-animated-shape">
-                                    <img src="/img/shape/6.png" alt="Image Not Found" />
-                                </div>
-                                <div className="f-item about pr-50 pr-xs-0 pr-md-0">
-                                    <img className="logo" src="/img/logo/logo-light.png" alt="Logo" />
+                                <div className={`f-item about ${locale === 'ar' ? "ps-5" : "pe-5"} pr-md-0 text-center`}>
+                                    <img className="logo" src="/img/logo/f-logo-light.png" alt="Logo" />
                                     <p>
-                                        Are off under folly death writter transforming cold regular. Almost do am or limits of hearts.
+                                        {t("logo slogan")}
                                     </p>
                                     <div className="footer-social mt-30">
                                         <ul>
@@ -36,25 +37,19 @@ const FooterV1 = () => {
 
                             <div className="col-lg-3 col-md-6 mt-50 footer-item pl-50 pl-md-15 pl-xs-15">
                                 <div className="f-item link">
-                                    <h4 className="widget-title">Company</h4>
+                                    <h4 className="widget-title">{t("Company")}</h4>
                                     <ul>
                                         <li>
-                                            <Link to="/about-us#">Company Profile</Link>
+                                            <Link to="/">{t("Home")}</Link>
                                         </li>
                                         <li>
-                                            <Link to="/about-us#">About</Link>
+                                            <Link to="/about-us">{t("About")}</Link>
                                         </li>
                                         <li>
-                                            <Link to="/faq#">Help Center</Link>
+                                            <Link to="/our-products">{t("Products")}</Link>
                                         </li>
                                         <li>
-                                            <Link to="/contact-us#">Career</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/pricing#">Plans & Pricing</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/contact-us#">Contact</Link>
+                                            <Link to="/contact-us">{t("Contact")}</Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -62,42 +57,21 @@ const FooterV1 = () => {
 
                             <div className="col-lg-3 col-md-6 footer-item mt-50">
                                 <div className="f-item contact">
-                                    <h4 className="widget-title">Contact Info</h4>
+                                    <h4 className="widget-title">{t("Contact Info")}</h4>
                                     <ul>
-                                        <li>
-                                            <div className="content">
-                                                <strong>Address:</strong>
-                                                5919 Trussville Crossings Pkwy, Birmingham
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="content">
-                                                <strong>Email:</strong>
-                                                <a href="mailto:info@validtheme.com">info@validtheme.com</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="content">
-                                                <strong>Phone:</strong>
-                                                <a href="tel:2151234567">+123 34598768</a>
-                                            </div>
-                                        </li>
+                                        {data && data.map((contact, index)=> {
+                                            return (<li key={index}>
+                                                <div className="content">
+                                                    <strong>{contact.title}:</strong>
+                                                    {contact.description}
+                                                </div>
+                                            </li>)
+                                        })}
+
                                     </ul>
                                 </div>
                             </div>
 
-                            <div className="col-lg-3 col-md-6 footer-item mt-50">
-                                <div className="f-item newsletter">
-                                    <h4 className="widget-title">Newsletter</h4>
-                                    <p>
-                                        Join our subscribers list to get the instant latest news and special offers.
-                                    </p>
-                                    <form onSubmit={handleSearch}>
-                                        <input type="email" placeholder="Your Email" className="form-control" name="email" autoComplete='off' required />
-                                        <button type="submit"><i className="fas fa-arrow-right"></i></button>
-                                    </form>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -107,7 +81,7 @@ const FooterV1 = () => {
                         <div className="row">
                             <div className="col-lg-12">
                                 <p>
-                                    Copyright &copy; {(new Date().getFullYear())} ValidThemes. All Rights Reserved
+                                    Copyright &copy; {(new Date().getFullYear())} Fixtone Paints. All Rights Reserved
                                 </p>
                             </div>
                         </div>

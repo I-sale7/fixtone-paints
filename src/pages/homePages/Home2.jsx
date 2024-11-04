@@ -22,7 +22,7 @@ const Home2 = () => {
                 <ServicesV2 />
                 <TestimonialV2 />
                 <WhyChooseUsV2 />
-                <TeamV2 />
+                <TeamV2 bgColor=""/>
                 <Experience />
                 <BrandV1 />
                 <ContactV1 />

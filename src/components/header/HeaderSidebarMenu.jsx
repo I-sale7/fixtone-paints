@@ -77,7 +77,7 @@ const HeaderSidebarMenu = ({ isSidebarOpen, removeClasses, addClasses, searchOpe
                         </form>
                     </div>
                     <div className="widget social">
-                        <ul className="link">
+                        <ul className="link"> 
                             <SocialShare2 />
                         </ul>
                     </div>

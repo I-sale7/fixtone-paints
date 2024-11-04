@@ -3,14 +3,17 @@ import AboutV3ListData from '../../jsonData/AboutV3ListData.json'
 import CountUp from 'react-countup';
 import ContentfulGraphQl from '../services/ContentfulGraphQl';
 import { homeAboutComponentCollection } from '../../gqlSchemas/about';
+import { useLocale } from '../services/LocaleContext';
 
 
 const AboutV3 = () => {
 
-    let aboutData = ContentfulGraphQl(homeAboutComponentCollection);
+    const { locale } = useLocale();
+
+    let aboutData = ContentfulGraphQl(homeAboutComponentCollection(locale));
 
     if(aboutData ){
-        const aboutUs = aboutData.homeAboutComponentCollection.items[0];
+        const aboutUs = aboutData?.homeAboutComponentCollection?.items[0];
         return (
             <>
                 <div className="about-style-three-area default-padding overflow-hidden">
@@ -38,30 +41,6 @@ const AboutV3 = () => {
                                     <p>
                                         {aboutUs.description.json.content[0].content[0].value}
                                     </p>
-                                    <ul className="list-grid-four">
-                                        {AboutV3ListData.map(about =>
-                                            <li key={about.id}>{about.item}</li>
-                                        )}
-                                    </ul>
-                                    {aboutUs.authorName ? 
-                                        (<div className="about-author">
-                                            {aboutUs.authorImage ? (
-                                                <div className="thumb">
-                                                    <img src={aboutUs.authorImage.url || "/img/team/9.jpg"} style={{objectFit: 'cover'}} alt="Image Not Found" />
-                                                </div>
-                                            ) : ''}
-                                            <div className="info">
-                                                {aboutUs.authorName ? (
-                                                    <h4>{aboutUs.authorName}</h4>
-                                                ) : ''}
-                                                {aboutUs.authorPosition ? (
-                                                    <span>{aboutUs.authorPosition}</span>
-                                                ) : ''}
-                                            </div>
-                                        </div>) :
-                                        ''
-                                    }
-                                    
                                 </div>
                             </div>
                         </div>

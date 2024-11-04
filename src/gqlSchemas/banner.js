@@ -1,5 +1,5 @@
-export const heroBannerCollection = `{
-  heroBannerCollection {
+export const heroBannerCollection = (locale = "en-US")=> `{
+  heroBannerCollection(locale: "${locale}") {
     items {
       id
       title

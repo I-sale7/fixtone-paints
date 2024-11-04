@@ -1,7 +1,10 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { HashLink as Link } from 'react-router-hash-link';
 
 const BreadCrumb = ({ title1, title2, breadCrumb, bottomSpace, offsetClass }) => {
+    const {t} = useTranslation();
+
     return (
         <>
             <div className="breadcrumb-area bg-gray bg-cover" style={{ backgroundImage: `url(/img/shape/banner-3.jpg)` }}>
@@ -14,7 +17,7 @@ const BreadCrumb = ({ title1, title2, breadCrumb, bottomSpace, offsetClass }) =>
                             <div className={`col-lg-8 ${offsetClass ? offsetClass : ""}`}>
                                 <nav aria-label="breadcrumb">
                                     <ol className="breadcrumb">
-                                        <li><Link to="/#"><i className="fa-solid fa-home"></i> Home</Link></li>
+                                        <li><Link to="/#"><i className="fa-solid fa-home"></i> {t("Home")}</Link></li>
                                         <li className="active">{breadCrumb ? breadCrumb : "error"}</li>
                                     </ol>
                                 </nav>

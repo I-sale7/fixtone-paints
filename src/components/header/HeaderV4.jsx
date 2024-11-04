@@ -1,5 +1,4 @@
 import React from 'react';
-import HeaderTopV1 from './HeaderTopV1';
 import MainMenu from './MainMenu';
 import HeaderLogoV3 from './HeaderLogoV3';
 import { useState } from 'react';
@@ -78,7 +77,6 @@ const HeaderV4 = ({ logoColor = false }) => {
 
     return (
         <>
-            <HeaderTopV1 />
             <header>
                 <nav className={`navbar mobile-sidenav navbar-default validnavs dark ${isSticky ? "sticked" : "no-background"}`}>
                     <div className="container d-flex justify-content-between align-items-center">

@@ -8,7 +8,7 @@ const Blog3Column = () => {
     return (
         <>
             <HeaderV5 />
-            <BreadCrumb breadCrumb="blog-3-column" title1="Blog Grid" bottomSpace="pb-0" />
+            <BreadCrumb breadCrumb="Our-Products" title1="Our Products" bottomSpace="pb-0" />
             <Blog3ColumnContent />
             <FooterV1 />
         </>

@@ -2,24 +2,19 @@ import React from 'react';
 import { HashLink as Link } from 'react-router-hash-link'
 
 const SingleBlog3Column = ({ blog }) => {
-    const { id, thumb2, author, date, title, icon, postLink, btnText } = blog
+    const { sys, mainImage, name} = blog
 
     return (
         <>
             <div className="blog-style-one">
-                <div className="thumb">
-                    <Link to={`/${postLink}/${id}#`}><img src={`/img/blog/${thumb2}`} alt="Image Not Found" /></Link>
+                <div className="product-thumb thumb">
+                    <Link to={`/project-details/${sys.id}#`}><img src={`${mainImage.url}`} alt="Image Not Found" /></Link>
                 </div>
                 <div className="info">
-                    <div className="meta">
-                        <ul>
-                            <li><Link to="#">{author}</Link></li>
-                            <li>{date}</li>
-                        </ul>
-                    </div>
-                    <h2 className="post-title"><Link to={`/${postLink}/${id}#`}>{title}</Link></h2>
-                    <Link to={`/${postLink}/${id}#`} className="button-regular">
-                        {btnText} <i className={icon}></i>
+                    <h2 className="post-title"><Link to={`/project-details/${sys.id}#`}>{name}</Link></h2>
+                    <Link to={`/project-details/${sys.id}#`} className="button-regular">
+                        {"Continue Reading"}
+                        <i className={"fa-solid fa-arrow-right"}></i>
                     </Link>
                 </div>
             </div>
