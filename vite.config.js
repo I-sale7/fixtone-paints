@@ -26,6 +26,9 @@ export default defineConfig({
           }
         },
       },
+      input: {
+        main: 'src/main.jsx', // Make sure this is correctly set to your main file
+      },
       plugins: [
         visualizer({
           filename: 'stats.html',
