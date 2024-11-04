@@ -1,0 +1,11 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false  // Keeps imports as ESM instead of transforming to require
+      }
+    ],
+    "@babel/preset-react"
+  ]
+}

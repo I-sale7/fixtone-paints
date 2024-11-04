@@ -14,6 +14,7 @@ import '../src/assets/css/unit-test.css';
 import '../src/assets/css/spacing.css'
 import '../src/assets/css/style.css'
 
+import React from 'react';
 import Routers from './Routers';
 import ScrollUpBtn from './components/others/ScrollUpBtn';
 import Preloader from './components/others/Preloader';

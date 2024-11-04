@@ -1,4 +1,4 @@
-import{a as fa}from"./@contentful-D8OdFKiS.js";import{r as da}from"./react-BufILVt8.js";import{s as pa}from"./scheduler-CzFDRTuY.js";var tu={},ao={exports:{}},ce={};/**
+import{a as fa}from"./@contentful-DyPCmf4f.js";import{r as da}from"./react-tIXwT9E7.js";import{s as pa}from"./scheduler-CzFDRTuY.js";var tu={},ao={exports:{}},ce={};/**
  * @license React
  * react-dom.production.min.js
  *

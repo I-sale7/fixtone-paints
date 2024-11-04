@@ -1,4 +1,4 @@
-import{a as u}from"./@contentful-D8OdFKiS.js";/*
+import{a as u}from"./@contentful-DyPCmf4f.js";/*
 object-assign
 (c) Sindre Sorhus
 @license MIT
