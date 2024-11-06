@@ -30,10 +30,6 @@ export default defineConfig({
         main: 'src/main.jsx', // Make sure this is correctly set to your main file
       },
       plugins: [
-        visualizer({
-          filename: 'stats.html',
-          open: true, // Automatically open the report in the browser
-        }),
       ],
     },
   },
