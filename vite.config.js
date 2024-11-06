@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { visualizer } from 'rollup-plugin-visualizer';
 import babel from 'vite-plugin-babel';
+import { resolve } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -27,7 +28,7 @@ export default defineConfig({
         },
       },
       input: {
-        main: 'src/main.jsx', // Make sure this is correctly set to your main file
+        main: resolve(__dirname, 'index.html'), // Make sure this is correctly set to your main file
       },
       plugins: [
       ],
