@@ -41,8 +41,8 @@ function App() {
         <LocaleProvider>
           <div>
             <Helmet>
-              <title>Dilabs Creative Digital Agency React Template</title>
-              <link rel="shortcut icon" href="/img/others/favicon.ico"></link>
+              <title>Durable & Stylish Paints for Interiors | High-Quality Wall Paints</title>
+              <link rel="shortcut icon" href="/img/others/l3.ico"></link>
             </Helmet>
             <Routers />
             <ScrollUpBtn />
