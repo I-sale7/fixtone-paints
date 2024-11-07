@@ -17,7 +17,7 @@ const HeaderLogoV2 = ({ logoColor = false, openMenu }) => {
                         :
                         <>
                             <img src="/img/logo/logo-light.png" className="logo logo-display" alt="Logo" />
-                            <img src="/img/logo/logo.png" className="logo logo-scrolled" alt="Logo" />
+                            <img src="/img/logo/Logo.png" className="logo logo-scrolled" alt="Logo" />
                         </>
                     }
                 </Link>
