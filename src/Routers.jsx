@@ -13,7 +13,7 @@ const Routers = () => {
     const {locale} = useLocale();
 
   useEffect(()=> {
-    document.documentElement.setAttribute('lang', locale === 'ar' ? 'ar' : 'en');
+    document.documentElement.setAttribute('lang', locale === 'ar' ? 'ar' : 'en-US');
     document.documentElement.setAttribute('dir', locale === 'ar' ? 'rtl' : 'ltr');
   }, [locale])
 

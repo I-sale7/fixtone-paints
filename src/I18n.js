@@ -3,14 +3,14 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
-const languageFromStorage = localStorage.getItem('language') || 'en'; // Load language from localStorage or default to 'en'
+const languageFromStorage = localStorage.getItem('language') || 'en-US'; // Load language from localStorage or default to 'en'
 
 i18n
   .use(LanguageDetector) // Language detector for detecting from URL
   .use(initReactI18next)
   .init({
     lng: languageFromStorage, // Set the initial language from localStorage
-    fallbackLng: 'en', // Default language
+    fallbackLng: 'en-US', // Default language
     detection: {
       order: ['cookie', 'localStorage', 'navigator', 'path', 'querystring'], // Order of language detection
       lookupLocalStorage: 'language', // Key to look for in localStorage
