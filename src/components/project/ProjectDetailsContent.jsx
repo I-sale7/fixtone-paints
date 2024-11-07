@@ -1,5 +1,4 @@
 import React from 'react';
-import ProjectInfoWidget from '../widgets/ProjectInfoWidget';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 

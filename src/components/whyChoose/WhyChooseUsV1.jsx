@@ -7,7 +7,6 @@ import { useLocale } from '../services/LocaleContext';
 const WhyChooseUsV1 = ({ chooseClass }) => {
 
     const {locale} = useLocale();
-
     const data = ContentfulGraphQl(MISSION_AND_VISION_QUERY(locale));
 
     if(!data) return;

@@ -3145,7 +3145,7 @@ button i {
 =================================================================== */
 
 .banner-area {
-	height: 100vh;
+	height: 488px;
 	width: 100%;
 	position: relative;
 }
@@ -6886,16 +6886,13 @@ ul.list-double {
 	z-index: 1;
 }
 
-.team-style-two .team-info a {
-	color: var(--white);
-}
-
 .team-style-two .team-info span {
 	color: var(--white);
 	opacity: 0.9;
 }
 
 .team-style-two .team-info h4 {
+	color: var(--white);
 	margin-bottom: 3px;
 }
 
@@ -10343,6 +10340,32 @@ body.bg-dark .megamenu-content .title {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.language-switcher a{
+	background: #fbb702;
+	color: white;
+	padding: 6px 12px;
+	border-radius: 12px;
+	margin-left: 1rem;
+}
+
+[dir=rtl] .language-switcher a{
+	margin-right: 1rem;
+	margin-left: 0;
+}
+
+.collapse-mobile .language-switcher a{
+	margin-top: 20px;
+	width: 100%;
+	display: block;
+	text-align: center;
+	margin-left: 0;
+	margin-right: 0;
+}
+[dir=rtl] .collapse-mobile .language-switcher a{
+	margin-left: 0;
+	margin-right: 0;
 }
 
 .active>.page-link, .page-link{

@@ -1,6 +1,4 @@
 import React from 'react';
-import Pagination from '../others/Pagination';
-import BlogColumnData from '../../jsonData/BlogColumnData.json'
 import SingleBlog3Column from './SingleBlog3Column';
 import ContentfulGraphQl from '../services/ContentfulGraphQl';
 import { productsQuery } from '../../gqlSchemas/products';
@@ -8,7 +6,7 @@ import { useLocale } from '../services/LocaleContext';
 
 const Blog3ColumnContent = () => {
 
-		const {locale} = useLocale();
+    const {locale} = useLocale();
     const products = ContentfulGraphQl(productsQuery(locale));
 
     if(!products) return;
@@ -24,7 +22,6 @@ const Blog3ColumnContent = () => {
                             </div>
                         )}
                     </div>
-                    {/* <Pagination /> */}
                 </div>
             </div>
         </>

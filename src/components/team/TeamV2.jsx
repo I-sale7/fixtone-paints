@@ -1,13 +1,10 @@
 import React from 'react';
 import SingleTeamV2 from './SingleTeamV2';
-import TeamV2Data from '../../jsonData/TeamV2Data.json'
 import ReactWOW from 'react-wow';
 import ContentfulGraphQl from '../services/ContentfulGraphQl';
 import { ourTeamsQuery } from '../../gqlSchemas/about';
 import { useLocale } from '../services/LocaleContext';
 import { useTranslation } from 'react-i18next';
-
-
 
 const TeamV2 = ({ bgColor }) => {
 

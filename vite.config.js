@@ -15,23 +15,4 @@ export default defineConfig({
   css: {
     devSourcemap: true
   },
-  build: {
-    outDir: 'build', // Ensure output directory is 'build'
-    chunkSizeWarningLimit: 1000,
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          // Create separate chunks for libraries or specific parts of your application
-          if (id.includes('node_modules')) {
-            return id.toString().split('node_modules/')[1].split('/')[0].toString();
-          }
-        },
-      },
-      input: {
-        main: resolve(__dirname, 'index.html'), // Make sure this is correctly set to your main file
-      },
-      plugins: [
-      ],
-    },
-  },
 })

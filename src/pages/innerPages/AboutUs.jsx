@@ -15,7 +15,6 @@ const AboutUs = () => {
             <BreadCrumb breadCrumb={t("About")} title1={t("About")} bottomSpace="pb-0" />
             <AboutV2 />
             <WhyChooseUsV2 />
-            {/* <TestimonialV2 /> */}
             <TeamV2 bgColor="bg-gray" />
             <FooterV1 />
         </>

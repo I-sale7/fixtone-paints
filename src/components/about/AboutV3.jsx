@@ -1,5 +1,4 @@
 import React from 'react';
-import AboutV3ListData from '../../jsonData/AboutV3ListData.json'
 import CountUp from 'react-countup';
 import ContentfulGraphQl from '../services/ContentfulGraphQl';
 import { homeAboutComponentCollection } from '../../gqlSchemas/about';

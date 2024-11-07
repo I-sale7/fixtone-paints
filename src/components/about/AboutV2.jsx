@@ -1,5 +1,4 @@
 import React from 'react';
-import { HashLink as Link } from 'react-router-hash-link'
 import ContentfulGraphQl from '../services/ContentfulGraphQl';
 import { aboutUsQuery } from '../../gqlSchemas/about';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';

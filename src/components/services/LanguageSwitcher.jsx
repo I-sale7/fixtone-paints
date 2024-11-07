@@ -24,7 +24,7 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <div className='ms-3' style={{background: '#fbb702', color: 'white', padding: '6px 12px', borderRadius: '12px'}}>
+    <div className='language-switcher'>
       <Link className={toggleLanguage('en-US')} style={{color: 'white'}} onClick={() => handleLanguageChange('en-US')}> English </Link>
       <Link className={toggleLanguage('ar')} style={{color: 'white'}} onClick={() => handleLanguageChange('ar')}> عربي </Link>
     </div>
