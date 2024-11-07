@@ -16,7 +16,7 @@ i18n
       lookupLocalStorage: 'language', // Key to look for in localStorage
     },
     resources: {
-      en: {
+      "en-US": {
         translation: {
           "Company": "Company",
           "Home": 'Home',
@@ -42,7 +42,7 @@ i18n
           "Message": "Message",
         },
       },
-      ar: {
+      "ar": {
         translation: {
           "Company": "الشركة",
           "Home": 'الرئيسية',
